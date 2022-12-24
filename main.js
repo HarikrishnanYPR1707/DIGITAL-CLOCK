@@ -3,6 +3,8 @@ setInterval(displayClock, 500);
 function displayClock() {
 	var time = new Date();
 
+	var dayNumber = time.getDay();
+	var dayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 	var hr = time.getHours();
 	var min = time.getMinutes();
 	var sec = time.getSeconds();
@@ -32,5 +34,5 @@ function displayClock() {
 		en = 'PM';
 	}
 
-	document.getElementById('clock-container').innerHTML = hr + ':' + min + ':' + sec + ' ' + en;
+	document.getElementById('clock-container').innerHTML = dayNames[dayNumber] + ' ' + hr + ':' + min + ':' + sec + ' ' + en;
 }
